@@ -2,10 +2,11 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional
+from __seedwork.domain.entities import Entity
 
 
-@dataclass
-class Category:
+@dataclass(kw_only=True, frozen=True)
+class Category(Entity):
     name: str
     description: Optional[str] = None
     is_active: Optional[bool] = True
